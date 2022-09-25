@@ -1,0 +1,25 @@
+types ReplaceBarons
+{
+	type replace_barons_button = hbox
+	{
+		margin_bottom = 8
+		margin_left = 16
+		layoutpolicy_horizontal = expanding
+		button_round = {
+			datacontext = "[GetScriptedGui('replace_barons_revoke_barony')]"
+			visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', HoldingView.GetTitle.MakeScope ).End)]"
+			onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('target', HoldingView.GetTitle.MakeScope ).End )]"
+			onclick = "[HoldingView.GetTitle.CreateHolderForTitle]"
+			tooltip = "replace_baron_button_tooltip"
+			button_icon = {
+				texture = "gfx/interface/icons/flat_icons/refresh.dds"
+				framesize = { 20 20 }
+				parentanchor = center
+				size = { 20 20 }
+				alwaystransparent = yes
+				inherit_visual_state = no
+			}
+		}
+		expand = {}
+	}
+}

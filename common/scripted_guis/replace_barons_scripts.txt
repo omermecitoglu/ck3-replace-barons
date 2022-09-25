@@ -1,0 +1,42 @@
+﻿replace_barons_revoke_barony = {
+	scope = character
+	saved_scopes = {
+		target
+	}
+	is_shown = {
+		scope:target = {
+			tier = tier_barony
+			county.holder = root
+		}
+	}
+	is_valid = {
+		always = yes
+	}
+	effect = {
+		if = {
+			limit = {
+				NOT = {
+					scope:target.holder = root
+				}
+			}
+			scope:target.holder = {
+				save_scope_as = recipient
+			}
+			save_scope_as = actor
+			revoke_title_interaction_effect = yes
+		}
+		create_title_and_vassal_change = {
+			type = revoked
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+		scope:target = {
+			change_title_holder = {
+				holder = prev
+				change = scope:change
+				take_baronies = yes
+			}
+		}
+		resolve_title_and_vassal_change = scope:change
+	}
+}
