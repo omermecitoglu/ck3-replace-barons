@@ -4,6 +4,7 @@
 		target
 	}
 	is_shown = {
+		has_realm_law_flag = title_revocation_allowed
 		scope:target = {
 			tier = tier_barony
 			county.holder = root
