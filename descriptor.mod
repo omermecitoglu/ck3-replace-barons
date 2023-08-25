@@ -3,5 +3,5 @@ tags={
 	"Utilities"
 }
 name="Replace Barons"
-supported_version="1.8.*"
+supported_version="1.10.*"
 remote_file_id="2867163179"
